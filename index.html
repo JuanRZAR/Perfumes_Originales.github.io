@@ -619,6 +619,201 @@ select{
   }
 }
 
+
+/* ===== Completos móvil + tipografía elegante en cantidad/categorías ===== */
+
+/* "Cantidad" con una presencia más elegante en completos y decants */
+.qty-pick > span{
+  font-family:var(--font-elegant);
+  font-size:15px;
+  line-height:1;
+  font-weight:700;
+  color:#2f2b27;
+  letter-spacing:.15px;
+}
+
+/* Categorías principales y etiquetas de tipo con la misma línea elegante */
+.categories .cat{
+  font-family:var(--font-elegant);
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:.2px;
+}
+.type-badge{
+  font-family:var(--font-elegant);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.35px;
+}
+
+/* En móviles: mismo tratamiento de cantidad de Decants para Perfumes Completos */
+@media(max-width:600px){
+  .view-full .qty-pick{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:6px;
+    width:100%;
+    min-width:0;
+    margin-top:7px;
+    padding:7px;
+    box-sizing:border-box;
+  }
+
+  .view-full .qty-pick > span{
+    width:100%;
+    text-align:center;
+    font-family:var(--font-elegant);
+    font-size:15px;
+    line-height:1;
+    font-weight:700;
+    color:#2f2b27;
+  }
+
+  .view-full .qty-stepper{
+    display:grid;
+    grid-template-columns:minmax(38px,1fr) 44px minmax(38px,1fr);
+    width:100%;
+    min-width:0;
+    box-sizing:border-box;
+  }
+
+  .view-full .qty-step{
+    width:100%;
+    min-width:0;
+    height:40px;
+    font-size:22px;
+    touch-action:manipulation;
+  }
+
+  .view-full .qty-number-input{
+    width:44px;
+    height:40px;
+    min-width:0;
+  }
+
+  /* Botón de agregar perfume cómodo y visible debajo del selector */
+  .view-full .product-add{
+    width:100%;
+    min-width:0;
+    min-height:48px;
+    margin-top:7px;
+    padding:10px 6px;
+    line-height:1.15;
+    white-space:normal;
+    touch-action:manipulation;
+  }
+
+  .categories .cat{
+    font-size:17px;
+    padding:11px 15px;
+  }
+
+  .type-badge{
+    font-size:12px;
+    padding:5px 7px;
+  }
+}
+
+@media(max-width:360px){
+  .view-full .qty-pick > span{font-size:14px}
+  .categories .cat{font-size:16px}
+}
+
+
+/* ===== Cantidad uniforme en TODO el catálogo =====
+   Aplica a completos y decants, independientemente de género o categoría.
+   Etiqueta arriba centrada + control abajo centrado.
+*/
+.product-card .qty-pick{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:7px !important;
+  width:100% !important;
+  min-width:0 !important;
+  box-sizing:border-box !important;
+  margin-top:8px !important;
+  padding:8px !important;
+}
+
+.product-card .qty-pick > span{
+  display:block !important;
+  width:100% !important;
+  text-align:center !important;
+  font-family:var(--font-elegant) !important;
+  font-size:15px !important;
+  line-height:1 !important;
+  font-weight:700 !important;
+  color:#2f2b27 !important;
+  letter-spacing:.15px !important;
+}
+
+.product-card .qty-stepper{
+  display:grid !important;
+  grid-template-columns:42px 46px 42px !important;
+  width:auto !important;
+  min-width:130px !important;
+  max-width:100% !important;
+  margin:0 auto !important;
+  box-sizing:border-box !important;
+}
+
+.product-card .qty-step{
+  width:42px !important;
+  min-width:42px !important;
+  height:40px !important;
+  padding:0 !important;
+  font-size:22px !important;
+  line-height:1 !important;
+  touch-action:manipulation;
+}
+
+.product-card .qty-number-input{
+  width:46px !important;
+  min-width:46px !important;
+  height:40px !important;
+  padding:0 !important;
+  text-align:center !important;
+  box-sizing:border-box !important;
+}
+
+/* En móvil conserva el mismo diseño, solo ligeramente más compacto. */
+@media(max-width:600px){
+  .product-card .qty-pick{
+    gap:6px !important;
+    margin-top:7px !important;
+    padding:7px !important;
+  }
+
+  .product-card .qty-pick > span{
+    font-size:15px !important;
+  }
+
+  .product-card .qty-stepper{
+    grid-template-columns:40px 44px 40px !important;
+    min-width:124px !important;
+  }
+
+  .product-card .qty-step{
+    width:40px !important;
+    min-width:40px !important;
+    height:40px !important;
+  }
+
+  .product-card .qty-number-input{
+    width:44px !important;
+    min-width:44px !important;
+    height:40px !important;
+  }
+}
+
+@media(max-width:340px){
+  .product-card .qty-pick > span{
+    font-size:14px !important;
+  }
+}
+
 </style>
 </head>
 <body>
